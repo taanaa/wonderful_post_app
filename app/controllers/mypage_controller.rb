@@ -5,8 +5,7 @@ class MypageController < ApplicationController
 
   def index
     @articles = Article.all
-    # @article = Article.find_by(id: params[:id])
-    # @user = User.find_by(id: @article.user_id)
+
   end
 
   def show
