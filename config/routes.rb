@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
 
   # get 'article/index'
-  resources :sample_articles
   resources :articles
   resources :mypage
   devise_scope :user do
