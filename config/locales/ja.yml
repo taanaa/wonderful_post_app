@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      article: 記事
+    attributes:
+      article:
+        Title_Content: 'タイトル'
+        Show: '詳細'
+        Edit: '編集'
+        Destroy: '消去'
+        New_Article: '作成'
+ja:
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"

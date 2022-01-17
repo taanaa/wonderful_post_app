@@ -1,0 +1,19 @@
+ja:
+ articles:
+   index:
+    Article: '記事'
+    Title_Content: 'タイトル'
+    Show: '詳細'
+    Edit: '編集'
+    Destroy: '消去'
+    New_Article: '作成'
+
+ users:
+   new:
+     title: 'ユーザー登録'
+     to_login_page : 'ログインページへ'
+ user_sessions:
+   new:
+     title: 'ログイン'
+     to_register_page: '登録ページへ'
+     password_forget: 'パスワードをお忘れの方はこちら'
