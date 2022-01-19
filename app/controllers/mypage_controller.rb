@@ -5,7 +5,7 @@ class MypageController < ApplicationController
 
   def index
     @articles = Article.all
-
+    @articles = Article.page(params[:page]).per(10)
   end
 
   def show
@@ -46,6 +46,7 @@ class MypageController < ApplicationController
       redirect_to articles_path, notice: t('notice.destroy')
     end
   end
+
 
 
 
