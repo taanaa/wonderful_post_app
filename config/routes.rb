@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'articles#index'
 
+  get '/articles/search', to: 'articles#search', as: 'search_article'
+  resources :articles, only: [:index]
+
+  # get '/mypage/_search', to: 'mypage#search', as: '_search_mypage'
+  # resources :mypage, only: [:index]
 
   # get 'article/index'
   resources :articles

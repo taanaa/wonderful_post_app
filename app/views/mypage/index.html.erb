@@ -4,7 +4,8 @@
  <p>MyPage <%= @article.id %></p>
 <%
 =end%>
-
+<h1>マイページ</h1>
+<%= render partial: "search" %>
 <%= link_to '記事作成', new_article_path, class: "btn btn-info" %>
 
 <table class="table">

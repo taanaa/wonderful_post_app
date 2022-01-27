@@ -15,7 +15,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>記事</h1>
-
+<%= render partial: "search" %>
 
 <%
 =begin%>
@@ -31,11 +31,22 @@
     </tr>
   </thead>
   <tbody>
-    <% @articles.each do |article| %>
+
+ <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
         <td>
+
+
+    <%
+=begin%>
+ <ul><% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article %>
+<%
+=end%>
+
 
           <%= link_to '詳細', article, class: "btn btn-success" %>
           <%
@@ -48,7 +59,7 @@
         </td>
       </tr>
     <% end %>
-    <%= paginate @articles %>
+ <%= paginate @articles %>
   </tbody>
 </table>
 

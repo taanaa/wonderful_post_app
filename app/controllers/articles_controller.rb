@@ -12,7 +12,9 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @articles = Article.page(params[:page]).per(10)
+    articles = Article.all
+    articles = articles.where("title LIKE ?", "%#{params[:title]}%") if params[:title].present?
+    @articles = articles.page params[:page]
   end
 
   def show
@@ -36,16 +38,6 @@ class ArticlesController < ApplicationController
     else
         render :new
    end
-
-    # respond_to do |format|
-    #   if @article.save
-    #     format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
-    #     format.json { render :show, status: :created, location: @article }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @article.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def update
@@ -62,11 +54,6 @@ class ArticlesController < ApplicationController
     if @article.destroy
       redirect_to articles_path, notice: t('notice.destroy')
     end
-
-    # respond_to do |format|
-    #   format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-    #   format.json { head :no_content }
-    # end
   end
 
  private
