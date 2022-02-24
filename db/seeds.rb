@@ -23,11 +23,14 @@
 #  end
 
 
- Tag.create([
-  { name: '学習' },
-  { name: '趣味' },
-  { name: 'その他' },
-])
+#  Tag.create([
+#   { name: '学習' },
+#   { name: '趣味' },
+#   { name: 'その他' },
+# ])
+
+tags = %w(学習 趣味 その他)
+tags.each { |tag| Tag.find_or_create_by!(name: tag) }
 
 
 # end
