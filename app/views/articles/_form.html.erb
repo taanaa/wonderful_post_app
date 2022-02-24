@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="mb-3">
+    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+  </div>
+
   <%
 =begin%>
  <div class="field">

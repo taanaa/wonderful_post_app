@@ -5,6 +5,7 @@
 <%
 =end%>
 <h1>マイページ</h1>
+
 <%= render partial: "search" %>
 <%= link_to '記事作成', new_article_path, class: "btn btn-info" %>
 
@@ -17,9 +18,16 @@
   </thead>
   <tbody>
 
-    <% @articles.each do |article| %>
+
+ <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+       <td>
+          <%= article.title %>
+          <% article.tags.each do |tag| %>
+            <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+          <% end %>
+
+        </td>
         <td><%= article.content %></td>
         <td>
           <%= link_to '詳細', article, class: "btn btn-success" %>

@@ -34,11 +34,15 @@
 
  <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+       <td><%= article.title %>
+         <% article.tags.each do |tag| %>
+           <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+         <% end %>
+       </td>
+
+
         <td><%= article.content %></td>
         <td>
-
-
     <%
 =begin%>
  <ul><% @articles.each do |article| %>
