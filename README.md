@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# タイトル
+Wonderful post app
+『記事作成アプリ』
 
-Things you may want to cover:
 
-* Ruby version
+# 概要
+記事を記録、共有するためのアプリ
 
-* System dependencies
 
-* Configuration
+# URL・テストアカウント
+- ポートフォリオURL : 
+- email : gest@example.com
+- password : 123456
 
-* Database creation
+# 制作意図
+<制作を通して自走力を身につける>ことを目的に製作いたしました。実際に実務に入るとやった事がないことやことや見た事のないエラーにぶつかる事がたくさん出てくると思います。
+その時、試行錯誤する力や、詰まってしまった時に何をしたいかを言語化する力が必要だと感じたので自走力を身につけるための学習をいたしました。
 
-* Database initialization
 
-* How to run the test suite
+# 使用技術
+- Ruby: 2.7.2
+- Rails: 6.0.3.7
+- Node.js: 15.7.0
+- DB: PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+# 機能一覧
+- 記事CRUD
+- マイページ（自分が書いた記事の一覧）
+- ユーザー登録・サインイン/サインアウト
 
-* Deployment instructions
-
-* ...
