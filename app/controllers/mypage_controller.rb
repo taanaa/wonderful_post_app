@@ -59,21 +59,29 @@ class MypageController < ApplicationController
 
 
   private
-
-  def set_article
-    @article = Article.find(params[:id])
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :content)
-  end
-
-  def ensure_correct_user
-    @article = Article.find(params[:id])
-  end
-
-    def set_user
-      @article = Article.find([:id])
+    # Use callbacks to share common setup or constraints between actions.
+    def set_article
+      @article = Article.find(params[:id])
     end
 
+
+
+    # Only allow a list of trusted parameters through.
+    def article_params
+      params.require(:article).permit(:title, :content, tag_ids:[])
+    end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+
+    def ensure_correct_user
+      @article = Article.find(params[:id])
+
+      # current_user はログインしていないと nil なのでエラ-する
+      if (@article.user_id != current_user.id)
+        flash[:notice] = "権限がありません"
+        redirect_to("/articles/index")
+      end
+   end
 end

@@ -1,9 +1,8 @@
 class Article < ApplicationRecord
 
   belongs_to :user
-  has_many :Article_Tags, dependent: :destroy
-  has_many :Tags, through: :Article_Tag
-
+  has_many :article_tags, dependent: :destroy
+  has_many :tags, through: :article_tags
 
   def user
     #インスタンスメソッドないで、selfはインスタンス自身を表す

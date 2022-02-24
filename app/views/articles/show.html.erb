@@ -3,7 +3,7 @@
 <div class="card">
   <div class="card-header">
     <%= @article.title %>
-   <% @article.tags.each do |tag| %>
+   <% form_with model: Article.tags.each do |tag| %>
       <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
     <% end %>
   </div>
@@ -12,12 +12,21 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
+
+ <% if user_signed_in? %>
 <% if @article.user_id == current_user.id %>
+
+ <%
+=begin%>
+ <% if current_user&.id == @article.user_id %>
+<%
+=end%>
   <%= link_to("編集", edit_article_path) %>
-<% else %>
+
+ <% else %>
   <td></td>
   <td></td>
+
 <% end %>
 
 <%= link_to '一覧', articles_path, class: "btn btn-secondary" %>

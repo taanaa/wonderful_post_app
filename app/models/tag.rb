@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
-  has_many :Article_Tags, dependent: :destroy
-  has_many :Articles, through: :Article_Tag
+  has_many :article_tags, dependent: :destroy
+  has_many :articles, through: :article_tags
 
   validates :name, presence: true
 end
