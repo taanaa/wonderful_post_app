@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :article_params, only: %i[ show edit update destroy ]
+  # before_action :article_params, only: %i[ show edit update destroy ]
   before_action :ensure_correct_user, { only: [:edit, :update, :destroy] }
 
   # def update
@@ -60,7 +60,6 @@ class ArticlesController < ApplicationController
  private
     # Only allow a list of trusted parameters through.
     def article_params
-      binding.pry
       params.require(:article).permit(:title, :content, tag_ids: [])
 
     end
