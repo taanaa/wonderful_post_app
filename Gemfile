@@ -1,4 +1,3 @@
-gem 'sqlite3', '~> 1.4'
 
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
