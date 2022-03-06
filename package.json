@@ -18,3 +18,4 @@
 "devDependencies": {
     "webpack-dev-server": "^4.7.2"
   }
+}
