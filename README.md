@@ -10,7 +10,7 @@ Wonderful post app
 
 
 # URL・テストアカウント
-- ポートフォリオURL : 
+- ポートフォリオURL : https://tanaka-portfolio.herokuapp.com
 - email : gest@example.com
 - password : 123456
 
